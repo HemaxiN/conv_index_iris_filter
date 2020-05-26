@@ -4,8 +4,8 @@ a = a(:,:,1);
 a = imresize(a,[128,128], 'nearest'); 
 N = 10; % filter size
 [gx,gy,gradient_img] = compute_gradient(a);
-radial_directions = iris_radial_directions(6);
-conv_map = iris_filter(gradient_img, gx, gy, 6,radial_directions);
+radial_directions = iris_radial_directions(N);
+conv_map = iris_filter(gradient_img, gx, gy, N,radial_directions);
 
 figure;
 imagesc(conv_map);
