@@ -45,8 +45,8 @@ function convergence_map = iris_filter(img, gx, gy, N, support_region)
           cos_X = radial_direction.*X;  
           cos_Y = radial_direction.*Y;
           
-          conv_x = imfilter(gx_slice, cos_X) / sum(radial_direction(:));  %eq 1, division by N
-          conv_y = imfilter(gy_slice, cos_Y) / sum(radial_direction(:));  %eq 1, division by N
+          conv_x = (gx_slice.*cos_X) / sum(radial_direction(:));  %eq 1, division by N
+          conv_y = (gy_slice.*cos_Y) / sum(radial_direction(:));  %eq 1, division by N
           
           conv = conv_x + conv_y;  %% convergence degree, eq 1
           
