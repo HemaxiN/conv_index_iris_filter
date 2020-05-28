@@ -65,7 +65,7 @@ function convergence_map = iris_filter(img, gx, gy, N, support_region)
 convergence_map = image(pad_x_direction+1:end-pad_x_direction,pad_y_direction+1:end-pad_y_direction);
 
 % gaussian filtering
-h=fspecial('gaussian',N,10);
+h=fspecial('gaussian',N, (1/3)*N);
 convergence_map = imfilter(convergence_map, h);
 
 end
