@@ -16,3 +16,7 @@ D = D.*(C>th*max(C(:)));
 hold on
 [i,j]=find(D);
 plot(j,i,'.r')
+
+#surface plot
+figure;
+surf(double(conv_map));
